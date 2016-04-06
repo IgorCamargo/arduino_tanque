@@ -9,54 +9,14 @@
 	<link rel="shortcut icon" href="img/ico-san.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<script type="text/javascript">
-		function coordenadas(event) {
-			x=event.clientX;
-			y=event.clientY;
-			alert("X coords: " + x + ", Y coords: " + y);
-		}
 
-		function mouse(e) {
-
-			if (document.all){}
-			else document.captureEvents(Event.MOUSEMOVE);
-			document.onmousemove=mouse;
-
-			if (navigator.appName == 'Netscape'){
-				xcurs = e.pageX;
-				ycurs = e.pageY;
-			} else {
-				xcurs = event.clientX;
-				ycurs = event.clientY;
-			}
-
-			document.getElementById('ver').style.left = (xcurs)+'px';
-			document.getElementById('hor').style.top = (ycurs)+'px';
-		}
-
-		function mouseOut(e) {
-
-			alert("saiu");
-
-			xcurs = '50';
-			ycurs = '50';
-
-			document.getElementById('ver').style.left = (xcurs)+'px';
-			document.getElementById('hor').style.top = (ycurs)+'px';
-		}
-
-	</script>
 
 </head>
 <!-- <body onmousedown="coordenadas(event)"> -->
 <body>
 
 	<section>
-		<div id="hor" class="mira hor"></div>
-		<div id="ver" class="mira ver"></div>
-		<div class="cam" onmouseover="mouse();" onmouseleave="mouseOut();">
-			<div height="320" width="480" src=""></div> <!-- http://192.168.1.126:8080/video -->
-		</div>
+		<iframe height="330" width="490" src="camera.html"></iframe>
 	</section>
 
 </body>

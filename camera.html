@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="shortcut icon" href="img/ico-san.ico" type="image/x-icon">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			outline: 0;
+			list-style: none;
+			font-weight: inherit;
+			font-style: inherit;
+			font-size: 100%;
+			font-family: inherit;
+			vertical-align: baseline;
+		}
+
+		html {
+			width: 480px;
+			height: 320px;
+		}
+
+		iframe {
+			position: absolute;
+			z-index: -5;
+		}
+
+		.cam {
+			width: 480px;
+			height: 320px;
+		}
+
+		/* mira */
+		.mira {
+			position: absolute;
+			z-index: 5;
+			line-height:0;
+			border: 1.5px solid #00f;
+		}
+		.hor {
+			margin-top: 158.5px;
+			width: 480px;
+			height: 0px;
+		}
+		.ver {
+			width: 0px;
+			height: 320px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function coordenadas(event) {
+			x=event.clientX;
+			y=event.clientY;
+			alert("X coords: " + x + ", Y coords: " + y);
+		}
+
+		function mouse(e) {
+
+			if (document.all){}
+			else document.captureEvents(Event.MOUSEMOVE);
+			document.onmousemove=mouse;
+
+			if (navigator.appName == 'Netscape'){
+				xcurs = e.pageX;
+				ycurs = e.pageY;
+			} else {
+				xcurs = event.clientX;
+				ycurs = event.clientY;
+			}
+
+			document.getElementById('ver').style.left = (xcurs)+'px';
+			// document.getElementById('hor').style.top = (ycurs)+'px';
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div id="hor" class="mira hor"></div>
+	<div id="ver" class="mira ver"></div>
+	<div class="cam" onmouseover="mouse();">
+		<iframe height="320" width="480" src="http://192.168.1.126:8080/video"></iframe> <!-- http://192.168.1.126:8080/video -->
+	</div>
+
+</body>
+</html>

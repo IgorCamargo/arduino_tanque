@@ -15,36 +15,3 @@ section {
 	width: 480px;
 	margin: 150px auto;
 }
-
-iframe {
-	position: absolute;
-	z-index: -5;
-}
-
-.cam {
-	width: 480px;
-	height: 320px;
-}
-
-/* mira */
-.mira {
-	position: absolute;
-	z-index: 5;
-	line-height:0;
-	border: 1.5px solid #00f;
-}
-.hor {
-	/*margin-top: 158.5px;*/
-	width: 480px;
-	height: 0px;
-}
-.ver {
-	width: 0px;
-	height: 320px;
-}
-
-/*==================*/
-#position {
-	background-color: #FF0000;
-	position: absolute;
-}
