@@ -9,8 +9,16 @@
 	<link rel="shortcut icon" href="img/ico-san.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<script type="text/javascript">
+		function coordenadas(event) {
+			x=event.clientX;
+			y=event.clientY;
+			alert("X coords: " + x + ", Y coords: " + y);
+		}
+	</script>
+
 </head>
-<body>
+<body onmousedown="coordenadas(event)">
 
 	<section>
 		<div class="mira hor"></div>
