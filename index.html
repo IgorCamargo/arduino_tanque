@@ -15,15 +15,48 @@
 			y=event.clientY;
 			alert("X coords: " + x + ", Y coords: " + y);
 		}
+
+		function mouse(e) {
+
+			if (document.all){}
+			else document.captureEvents(Event.MOUSEMOVE);
+			document.onmousemove=mouse;
+
+			if (navigator.appName == 'Netscape'){
+				xcurs = e.pageX;
+				ycurs = e.pageY;
+			} else {
+				xcurs = event.clientX;
+				ycurs = event.clientY;
+			}
+
+			document.getElementById('ver').style.left = (xcurs)+'px';
+			document.getElementById('hor').style.top = (ycurs)+'px';
+		}
+
+		function mouseOut(e) {
+
+			alert("saiu");
+
+			xcurs = '50';
+			ycurs = '50';
+
+			document.getElementById('ver').style.left = (xcurs)+'px';
+			document.getElementById('hor').style.top = (ycurs)+'px';
+		}
+
 	</script>
 
 </head>
-<body onmousedown="coordenadas(event)">
+<!-- <body onmousedown="coordenadas(event)"> -->
+<body>
 
 	<section>
-		<div class="mira hor"></div>
-		<div class="mira ver"></div>
-		<iframe height="320" width="480" src="http://192.168.1.126:8080/video"></iframe>
+		<div id="hor" class="mira hor"></div>
+		<div id="ver" class="mira ver"></div>
+		<div class="cam" onmouseover="mouse();" onmouseleave="mouseOut();">
+			<div height="320" width="480" src=""></div> <!-- http://192.168.1.126:8080/video -->
+		</div>
 	</section>
 
 </body>
