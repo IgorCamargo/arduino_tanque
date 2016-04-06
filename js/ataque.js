@@ -15,7 +15,7 @@ function coordenadas(event) {
 	   req = new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
-	var url = "../index.html?"+x;
+	var url = "../teste.php?valor="+x;
 	// var url = "192.168.1.158:9600/?"+x;					// comando arduino - <a href=\"/?cen\"\">Centralizar câmera</a>
 
 // Chamada do método open para processar a requisição
@@ -31,9 +31,9 @@ function coordenadas(event) {
 		if(req.readyState == 4 && req.status == 200) {
 // Resposta retornada pelo busca.php
 			// alert("enviado "+x);
-			// var resposta = req.responseText;
+			var resposta = req.responseText;
 // Abaixo colocamos a(s) resposta(s) na div resultado
-			document.getElementById('retorno').innerHTML = 'enviado '+x;
+			document.getElementById('retorno').innerHTML = resposta;
 		}
 	}
 	req.send(null);
