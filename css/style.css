@@ -20,3 +20,19 @@ hr {
 	position: relative;
 	width: 100%;
 }
+
+/* mira */
+.mira {
+	position: absolute;
+	z-index: 5;
+	line-height:0;
+	border: 2.5px solid #00f;
+}
+.hor {
+	width: 480px;
+	height: 0px;
+}
+.ver {
+	width: 0px;
+	height: 320px;
+}
