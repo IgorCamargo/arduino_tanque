@@ -9,6 +9,14 @@
 	<link rel="shortcut icon" href="img/ico-san.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<script>
+		var url   = window.location.search.replace("?", "");
+		if (url.indexOf("?")>0) {
+			var items = url.split("&");
+			alert(items);
+		}
+	</script>
+
 </head>
 <body>
 

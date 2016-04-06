@@ -5,7 +5,7 @@ function coordenadas(event) {
 	x=event.clientX;
 	y=event.clientY;
 	// alert("X coords: " + x + ", Y coords: " + y);
-	alert("X coords: " + x);
+	// alert("X coords: " + x);
 // ==========================================================================================
 // Verificando Browser
 	if(window.XMLHttpRequest) {
@@ -14,7 +14,10 @@ function coordenadas(event) {
 	else if(window.ActiveXObject) {
 	   req = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	var url = "192.168.1.158:9600/?"+x;					// comando arduino - <a href=\"/?cen\"\">Centralizar câmera</a>
+
+	var url = "../index.html?"+x;
+	// var url = "192.168.1.158:9600/?"+x;					// comando arduino - <a href=\"/?cen\"\">Centralizar câmera</a>
+
 // Chamada do método open para processar a requisição
 	req.open("Get", url, true);
 // Quando o objeto recebe o retorno, chamamos a seguinte função;
